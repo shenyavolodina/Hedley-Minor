@@ -1,0 +1,10 @@
+First argument is a Term.
+Second argument is a map with types of variables.
+
+Examples:
+
+> hindley_milner_typing (Lambda 1 (Lambda 2 (Var 1))) (fromList [(1, "a"), (2, "b")]) 
+("a"->("b"->"a"))
+
+> hindley_milner_typing (Apply (Lambda 1 (Var 2)) (Var 3)) (fromList [(1, "a"), (2, "b"), (3, "c")])
+(("a"->"b")->"c")
